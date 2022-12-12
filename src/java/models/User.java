@@ -57,6 +57,8 @@ public class User implements Serializable {
     private String password;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner", fetch = FetchType.EAGER)
     private List<Note> noteList;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner", fetch = FetchType.EAGER)
+    private List<Item> itemList;
     @JoinColumn(name = "role", referencedColumnName = "role_id")
     @ManyToOne(optional = false, fetch = FetchType.EAGER)
     private Role role;
@@ -74,6 +76,15 @@ public class User implements Serializable {
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
+    }
+    
+    public User(String email, boolean active, String firstName, String lastName, String password, Role role) {
+        this.email = email;
+        this.active = active;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.password = password;
+        this.role = role;
     }
 
     public String getEmail() {
@@ -120,7 +131,7 @@ public class User implements Serializable {
     public List<Note> getNoteList() {
         return noteList;
     }
-
+    
     public void setNoteList(List<Note> noteList) {
         this.noteList = noteList;
     }
@@ -156,6 +167,14 @@ public class User implements Serializable {
     @Override
     public String toString() {
         return "models.User[ email=" + email + " ]";
+    }
+
+    public List<Item> getItemList() {
+        return itemList;
+    }
+    
+    public void setItemList(List<Item> items) {
+        itemList = items;
     }
     
 }

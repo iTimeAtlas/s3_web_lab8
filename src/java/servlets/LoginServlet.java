@@ -25,6 +25,12 @@ public class LoginServlet extends HttpServlet {
             throws ServletException, IOException {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
+        String action = request.getParameter("action");
+        
+        if (action == "signUp") {
+            
+            return;
+        }
         
         AccountService as = new AccountService();
         User user = as.login(email, password);

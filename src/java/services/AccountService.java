@@ -1,6 +1,7 @@
 package services;
 
 import dataaccess.UserDB;
+import models.Role;
 import models.User;
 
 public class AccountService {
@@ -18,4 +19,19 @@ public class AccountService {
         
         return null;
     }
+    
+    public void signUp(String email, String fName, String lName, String password) throws Exception {
+        UserDB userDB = new UserDB();
+        
+        Role role = new Role(2);
+        
+        User newUser = new User(email, true, fName, lName, password, role);
+        
+        userDB.insert(newUser);
+       
+    }
+    
+    
+    
+    
 }

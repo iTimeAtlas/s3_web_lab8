@@ -18,11 +18,11 @@
     </filter-mapping>
     <filter-mapping>
         <filter-name>AuthenticationFilter</filter-name>
-        <servlet-name>NoteServlet</servlet-name>
+        <servlet-name>ItemServlet</servlet-name>
     </filter-mapping>
     <servlet>
-        <servlet-name>NoteServlet</servlet-name>
-        <servlet-class>servlets.NoteServlet</servlet-class>
+        <servlet-name>ItemServlet</servlet-name>
+        <servlet-class>servlets.ItemServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
@@ -33,16 +33,16 @@
         <servlet-class>servlets.AdminServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>NoteServlet</servlet-name>
-        <url-pattern>/notes</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>AdminServlet</servlet-name>
         <url-pattern>/admin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ItemServlet</servlet-name>
+        <url-pattern>/items</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

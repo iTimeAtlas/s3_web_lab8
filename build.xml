@@ -7,8 +7,8 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
-<project name="SecurityDemo" default="default" basedir=".">
-    <description>Builds, tests, and runs the project SecurityDemo.</description>
+<project name="s3_web_Final_SeanMa" default="default" basedir=".">
+    <description>Builds, tests, and runs the project s3_web_Final_SeanMa.</description>
     <import file="nbproject/build-impl.xml"/>
     <!--
 
